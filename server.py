@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app, origins='http://localhost:3000', supports_credentials=True)  # Set CORS headers for all routes
 
 
-@app.route('/bot', methods=['POST'])
+@app.route('/', methods=['POST'])
 def hello_world():
     try:
         # Set CORS headers for the response
@@ -61,7 +61,3 @@ def hello_world():
         # Handle any errors that may occur during processing
         # Return an error response if needed
         return jsonify({'error': str(ex)}), 500
-
-
-if __name__ == '__main__':
-    app.run(host='localhost', port=8080)
