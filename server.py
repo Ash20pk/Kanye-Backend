@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins='http://localhost:3000', supports_credentials=True)  # Set CORS headers for all routes
+CORS(app, origins='*', supports_credentials=True)  # Set CORS headers for all routes
 
 
 @app.route('/', methods=['POST'])
@@ -12,7 +12,7 @@ def hello_world():
     try:
         # Set CORS headers for the response
         headers = {
-            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Allow-Credentials': 'true'
